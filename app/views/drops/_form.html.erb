@@ -1,4 +1,4 @@
-<%= form_with(model: drop, local: true) do |form| %>
+<%= form_with(model: drop, remote: true) do |form| %>
   <% if drop.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(drop.errors.count, "error") %> prohibited this drop from being saved:</h2>

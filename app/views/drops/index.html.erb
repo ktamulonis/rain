@@ -2,7 +2,7 @@
 
 <h1>Drops</h1>
 <% @drops.each do |drop| %>
-  <%= link_to drop, method: :delete  do %>
+  <%= link_to drop, method: :delete, remote: true do %>
     <div class="water">
     </div>
   <% end %>
