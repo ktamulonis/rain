@@ -5,6 +5,7 @@ class DropsController < ApplicationController
   # GET /drops.json
   def index
     @drops = Drop.all
+    @drop = Drop.new
   end
 
   # GET /drops/1
@@ -28,8 +29,8 @@ class DropsController < ApplicationController
 
     respond_to do |format|
       if @drop.save
-        format.html { redirect_to @drop, notice: 'Drop was successfully created.' }
-        format.json { render :show, status: :created, location: @drop }
+        format.html { redirect_to root_path, notice: 'Drop was successfully created.' }
+        format.json { render :index, status: :created }
       else
         format.html { render :new }
         format.json { render json: @drop.errors, status: :unprocessable_entity }
